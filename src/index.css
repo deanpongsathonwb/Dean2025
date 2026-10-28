@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+*, *::before, *::after {
+  transition-property: none !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+/* Prevent layout shift by keeping a single vertical scrollbar consistently reserved at the html level */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-y: visible;
+  min-height: 100%;
+}
+
+/* Improve cursor behavior by displaying the pointer cursor when hovering over buttons and interactive clickable elements */
+button,
+[role="button"],
+a,
+select,
+summary,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"],
+label[for],
+label:has(input),
+label:has(select) {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"],
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
+/* Ensure no scrollbar appears in the sidebar when rotating the screen across all viewports */
+aside,
+aside *,
+nav[aria-label="Sidebar"],
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+aside::-webkit-scrollbar,
+aside *::-webkit-scrollbar,
+nav[aria-label="Sidebar"]::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
